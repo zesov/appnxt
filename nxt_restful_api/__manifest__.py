@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "nxt restful api",
+    'name': "NXT restful api",
 
     'summary': """
         This module provide RESTful API (json) access to Odoo models.
@@ -36,7 +36,7 @@
     'images': ['static/description/appnxt.png'],
     "installable": True,
     "application": False,
-    'live_test_url': 'http://d10.y.appnxt.com/',
+    'live_test_url': 'http://d10c.y.appnxt.com/',
     # 'price': 9.99,
     # 'currency': 'EUR',
 }
