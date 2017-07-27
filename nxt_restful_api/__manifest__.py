@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "nxt_restful_api",
+    'name': "nxt restful api",
 
     'summary': """
         This module provide RESTful API (json) access to Odoo models.
@@ -8,15 +8,16 @@
 
     'description': """
         This module provide RESTful API (json) access to Odoo models.
+        supported by Shanghai Panlu network technology. Ltd.
     """,
 
-    'author': "63720750@qq.com",
-    'website': "http://www.appnxt.com",
+    'author': "appnxt.com",
+    'website': "http://appnxt.com",
 
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/openerp/addons/base/module/module_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'Extra Tools',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
@@ -32,4 +33,10 @@
     'demo': [
         'demo/demo.xml',
     ],
+    'images': ['static/description/appnxt.png'],
+    "installable": True,
+    "application": False,
+    'live_test_url': 'http://d10.y.appnxt.com/',
+    # 'price': 9.99,
+    # 'currency': 'EUR',
 }
