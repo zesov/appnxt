@@ -36,7 +36,7 @@
     'images': ['static/description/appnxt.png'],
     "installable": True,
     "application": False,
-    'live_test_url': 'http://d10c.y.appnxt.com/',
+    'live_test_url': 'http://d10c.y.appnxt.com',
     # 'price': 9.99,
     # 'currency': 'EUR',
 }
