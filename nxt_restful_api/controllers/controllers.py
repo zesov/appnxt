@@ -4,12 +4,12 @@
 
 from odoo import api, http, SUPERUSER_ID, _
 from odoo.modules.registry import RegistryManager
-from odoo.http import Root
 import werkzeug
 import base64
 import time
 import json
 import logging
+import pdb
 
 _logger = logging.getLogger(__name__)
 
@@ -148,17 +148,18 @@ class NxtRestfulApi(http.Controller):
     @http.route([
         '/api/v1.0/get_token',
         ], type='http', auth="none", csrf=False, methods=['POST','GET'])
-    def get_token(self,serv='http://d10.appnxt.com', a=None, s='admin', d='d10', sid=None, success=True, message='',**kw):
+    def get_token(self,serv='http://d10.appnxt.com', a=None, s='admin', db='d10', sid=None, success=True, message='',**kw):
         """ service, app(user/login),secret(password) """
+        pdb.set_trace()
         try:
-            uid = http.request.session.authenticate(d, a, s)
+            uid = http.request.session.authenticate(db, a, s)
         except Exception,e:
             rp = {'token': '','success':False,'message':str(e)}
             return json_response(rp)
         if not uid:
             rp = {'token': '','success':False,'message':'you are unauthenticated'}
             return json_response(rp)
-        e = base64.urlsafe_b64encode(','.join([serv,d,a,str(uid),str(int(time.time()))]))
+        e = base64.urlsafe_b64encode(','.join([serv,db,a,str(uid),str(int(time.time()))]))
         rp = {'token': e.replace('=',''),'success':success,'message':message}
         return json_response(rp)
 
