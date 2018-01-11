@@ -1,0 +1,9 @@
+# ignore files
+.svn/
+*.pyc
+*.sublime-workspace
+*.sublime-project
+*.DS_Store
+*.json
+*.txt
+.ftpconfig

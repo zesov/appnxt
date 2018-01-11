@@ -1,0 +1,71 @@
+<openerp>
+  <data>
+    <!-- explicit list view definition -->
+      <record id="seq_auto_reset" model="ir.sequence">
+        <field name="name">auto reset default</field>
+        <field name="code">auto.reset.seq</field>
+        <field name="prefix">%(y)s%(month)s%(day)s</field>
+        <field name="padding">2</field>
+        <field name="suffix"></field>
+        <field name="auto_reset">1</field>
+        <field name="reset_period">day</field>
+        <field name="reset_init_number">1</field>
+        <field name="company_id" eval="False"/>
+      </record>
+        <record id="view_ir_sequence_form" model="ir.ui.view">
+            <field name="name">ir.sequence.form </field>
+            <field name="model">ir.sequence</field>
+            <field name="inherit_id" ref="base.sequence_view"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//field[@name='suffix']" position="after">
+                        <field name="auto_reset"/>
+                        <field name="reset_period"/>
+                        <field name="reset_init_number"/>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+
+    <!-- actions opening views on models -->
+    <!--
+    <record model="ir.actions.act_window" id="auto_reset_sequence.action_window">
+      <field name="name">auto_reset_sequence window</field>
+      <field name="res_model">auto_reset_sequence.auto_reset_sequence</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+    -->
+
+    <!-- server action to the one above -->
+    <!--
+    <record model="ir.actions.server" id="auto_reset_sequence.action_server">
+      <field name="name">auto_reset_sequence server</field>
+      <field name="model_id" ref="model_auto_reset_sequence_auto_reset_sequence"/>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": self._name,
+        }
+      </field>
+    </record>
+    -->
+
+    <!-- Top menu item -->
+    <!--
+    <menuitem name="auto_reset_sequence" id="auto_reset_sequence.menu_root"/>
+    -->
+    <!-- menu categories -->
+    <!--
+    <menuitem name="Menu 1" id="auto_reset_sequence.menu_1" parent="auto_reset_sequence.menu_root"/>
+    <menuitem name="Menu 2" id="auto_reset_sequence.menu_2" parent="auto_reset_sequence.menu_root"/>
+    -->
+    <!-- actions -->
+    <!--
+    <menuitem name="List" id="auto_reset_sequence.menu_1_list" parent="auto_reset_sequence.menu_1"
+              action="auto_reset_sequence.action_window"/>
+    <menuitem name="Server to list" id="auto_reset_sequence" parent="auto_reset_sequence.menu_2"
+              action="auto_reset_sequence.action_server"/>
+    -->
+  </data>
+</openerp>
