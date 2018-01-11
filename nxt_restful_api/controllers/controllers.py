@@ -126,7 +126,7 @@ def no_token():
     return json_response(rp)
 
 def json_response(rp):
-    headers = {"Access-Control-Allow-Origin": "*"}
+    headers = {"Access-Control-Allow-Origin": "*","Access-Control-Allow-Methods":"GET,POST,PUT,DELETE,OPTIONS"}
     return werkzeug.wrappers.Response(json.dumps(rp,ensure_ascii=False), mimetype='application/json',headers=headers) 
 
 def authenticate(token):
@@ -221,7 +221,7 @@ class NxtRestfulApi(http.Controller):
 
     @http.route([
         '/api/v1.0/<string:model>/<string:ids>',
-        ], auth='none', type='http', csrf=False, methods=['PUT','PATCH'])
+        ], auth='none', type='http', csrf=False, methods=['PUT','OPTIONS'])
     def update_objects(self, model=None, ids=None, success=True, message='', **kw):
         token = kw.pop('token')
         env = authenticate(token)
