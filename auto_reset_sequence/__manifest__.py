@@ -3,10 +3,10 @@
     'name': "auto_reset_sequence",
 
     'summary': """
-        Auto Reset Sequences Dayly, Monthly or Yearly!""",
+        Auto Reset Sequences Daily, Monthly or Yearly!""",
 
     'description': """
-        Auto Reset Sequences Dayly, Monthly or Yearly!
+        Auto Reset Sequences Daily, Monthly or Yearly!
     """,
 
     'author': "Appnext",
