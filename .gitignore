@@ -1,5 +1,6 @@
 # ignore files
 .svn/
+.idea/
 *.pyc
 *.sublime-workspace
 *.sublime-project
@@ -7,3 +8,6 @@
 *.json
 *.txt
 .ftpconfig
+.idea/appnxt.iml
+.idea/modules.xml
+.idea/workspace.xml
