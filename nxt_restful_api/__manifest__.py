@@ -10,7 +10,7 @@
         This module provide RESTful API (json) access to Odoo models.
     """,
 
-    'author': "63720750@qq.com",
+    'author': "Appnxt",
     'website': "http://www.appnxt.com",
 
     # Categories can be used to filter modules in modules listing
