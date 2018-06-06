@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 {
-    'name': "nxt_restful_api",
+    'name': "nxt restful api",
 
     'summary': """
-        This module provide RESTful API (json) access to Odoo models.
+        This module provide RESTful API access to Odoo models.
         """,
 
     'description': """
-        This module provide RESTful API (json) access to Odoo models.
+        This module provide RESTful API access to Odoo models.
     """,
 
     'author': "Appnxt",
@@ -16,7 +16,7 @@
     # Categories can be used to filter modules in modules listing
     # Check https://github.com/odoo/odoo/blob/master/openerp/addons/base/module/module_data.xml
     # for the full list
-    'category': 'Uncategorized',
+    'category': 'Tools',
     'version': '0.1',
 
     # any module necessary for this one to work correctly
