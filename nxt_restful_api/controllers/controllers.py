@@ -8,6 +8,7 @@ import json
 from functools import wraps
 from odoo.tools.safe_eval import safe_eval
 from odoo.http import Controller, request, route
+from odoo.models import BaseModel
 
 def eval_request_params(kwargs):
     for k, v in kwargs.iteritems():
@@ -21,6 +22,8 @@ def make_response(func):
     def wrapper(*args, **kwargs):
         try:
             result = func(*args, **kwargs)
+            if isinstance(result, BaseModel):
+                result = result.ids
             return request.make_response(json.dumps(result))
         except Exception, e:
             return request.make_response(json.dumps({'error': str(e)}))
